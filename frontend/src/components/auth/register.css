@@ -1,0 +1,77 @@
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.register-paper {
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    transition: all 0.3s ease;
+}
+
+.register-paper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.15);
+}
+
+.register-title {
+    font-weight: 700;
+    color: #3f51b5;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.register-input .MuiOutlinedInput-root {
+    border-radius: 8px;
+}
+
+.register-input .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #3f51b5 !important;
+    border-width: 2px !important;
+}
+
+.register-button {
+    background: linear-gradient(45deg, #3f51b5 0%, #5c6bc0 100%);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    text-transform: none;
+    transition: all 0.3s ease;
+}
+
+.register-button:hover {
+    background: linear-gradient(45deg, #3949ab 0%, #4a5bbf 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(63, 81, 181, 0.2);
+}
+
+.register-button:disabled {
+    background: #e0e0e0;
+    transform: none;
+    box-shadow: none;
+}
+
+.register-link {
+    color: #3f51b5 !important;
+    font-weight: 600;
+    text-transform: none;
+    padding: 0 0.25rem;
+    min-width: auto;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.register-alert {
+    border-radius: 8px !important;
+}
