@@ -11,7 +11,7 @@ const pulseAnimation = keyframes`
   100% { transform: scale(1); }
 `;
 
-const MessageForm = () => {
+const MessageForm = ({ setMessages }) => {
     const [message, setMessage] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const typingTimeout = useRef(null);
@@ -46,6 +46,18 @@ const MessageForm = () => {
             setIsTyping(false);
         }, 3000);
     };
+
+    useEffect(() => {
+        // Listen for new messages from backend
+        socket?.on('newMessage', (newMessage) => {
+            console.log('Received new message:', newMessage);
+            setMessages((prevMessages) => [...prevMessages, newMessage]); // Update messages
+        });
+
+        return () => {
+            socket?.off('newMessage'); // Cleanup when component unmounts
+        };
+    }, [socket]);
 
     useEffect(() => {
         return () => {
@@ -129,4 +141,4 @@ const MessageForm = () => {
     );
 };
 
-export default MessageForm; 
+export default MessageForm;

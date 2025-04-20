@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://real-time-chat-app-mxah.onrender.com/api'; // ✅ Updated
+const API_URL = 'https://real-time-chat-app-mxah.onrender.com/api'; // Update with your backend URL
 
 const api = axios.create({
     baseURL: API_URL,
@@ -9,6 +9,7 @@ const api = axios.create({
     },
 });
 
+// Add token to requests if it exists
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {

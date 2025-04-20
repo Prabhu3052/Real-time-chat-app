@@ -10,9 +10,9 @@ export const SocketProvider = ({ children }) => {
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
-        const newSocket = io('http://localhost:5000', {
+        const newSocket = io('https://real-time-chat-app-mxah.onrender.com', { // Your deployed backend URL here
             autoConnect: true,
-            transports: ['websocket']
+            transports: ['websocket'],
         });
 
         newSocket.on('connect', () => {
@@ -65,4 +65,4 @@ export const SocketProvider = ({ children }) => {
             {children}
         </SocketContext.Provider>
     );
-}; 
+};
