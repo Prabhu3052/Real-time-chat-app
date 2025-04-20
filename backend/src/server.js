@@ -16,7 +16,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: '*',
+        origin: 'https://real-time-chat-app-eight-dusky.vercel.app/',
         methods: ['GET', 'POST']
     }
 });
